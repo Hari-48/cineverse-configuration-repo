@@ -85,6 +85,15 @@ spring:
                 - JwtValidation
 
 
+            - id: movie-service
+              uri: lb://MOVIE-SERVICE
+              predicates:
+                - Path=/movie/**
+              filters:
+                - JwtValidation
+
+
+
 
 auth:
   service:
