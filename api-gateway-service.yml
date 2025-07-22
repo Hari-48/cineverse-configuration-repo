@@ -92,8 +92,12 @@ spring:
               filters:
                 - JwtValidation
 
-
-
+            - id: booking-service
+              uri: lb://BOOKING-SERVICE
+              predicates:
+                - Path=/booking/**
+              filters:
+                - JwtValidation
 
 auth:
   service:
